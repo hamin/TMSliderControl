@@ -203,9 +203,9 @@
     return state;
 }
 
-- (void)setState:(NSInteger)newState
+- (void)setState:(BOOL)newState
 {
-    [super setState:newState];
+    state = newState;
     if ([self state] == NSOffState)
     {
         handleControlRect = handleControlRectOff;
@@ -229,7 +229,7 @@
     }
     
     [self sendAction:[self action] to:[self target]];
-    [self setNeedsDisplay: YES];
+    [self setNeedsDisplay:YES];
 }
 
 
