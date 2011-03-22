@@ -203,7 +203,7 @@
     return state;
 }
 
-- (void)setState:(BOOL)newState
+- (void)setStateNoAction:(BOOL)newState
 {
     state = newState;
     if ([self state] == NSOffState)
@@ -223,15 +223,21 @@
         [[sliderHandleView animator] setFrameOrigin: handleControlRect.origin];
         [NSAnimationContext endGrouping];
     }
-    else {
+    else 
+    {
         // It's not in a window, just set it.
         [sliderHandleView setFrameOrigin:handleControlRect.origin];
     }
     
-    [self sendAction:[self action] to:[self target]];
     [self setNeedsDisplay:YES];
 }
 
+- (void)setState:(BOOL)newState
+{
+    [self setStateNoAction:newState];
+
+    [self sendAction:[self action] to:[self target]];
+}
 
 - (void)setTarget:(id)anObject
 {

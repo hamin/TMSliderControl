@@ -47,6 +47,8 @@ typedef enum
 - (BOOL)state;
 - (void)setState:(BOOL)newState;
 
+- (void)setStateNoAction:(BOOL)newState;
+
 - (void)setTarget:(id)anObject;
 - (id)target;
 - (void)setAction:(SEL)aSelector;
