@@ -151,6 +151,14 @@
 }
 
 
+- (void)performClick:(NSEvent *)theEvent
+{
+  [self mouseDown:(NSEvent *)theEvent];
+  [self mouseDragged:(NSEvent *)theEvent];
+  [self mouseUp:(NSEvent *)theEvent];
+}
+
+
 - (void)mouseUp:(NSEvent*)theEvent
 {
     float minimumMovement = 10.0;

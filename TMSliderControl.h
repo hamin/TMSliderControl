@@ -43,6 +43,7 @@ typedef enum
 - (void)mouseDown:(NSEvent*)theEvent;
 - (void)mouseDragged:(NSEvent*)theEvent;
 - (void)mouseUp:(NSEvent*)theEvent;
+- (void)performClick:(NSEvent*)theEvent;
 
 - (BOOL)state;
 - (void)setState:(BOOL)newState;
